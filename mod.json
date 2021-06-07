@@ -1,0 +1,29 @@
+{
+  "Name": "PPF Test mod",
+  "Author": "Camdog74",
+  "Description": "for testing the PPF",
+  "ModVersion": "1.0",
+  "GameVersion": "People using the Power Pack Framework",
+  "ThumbnailPath": "thumb.png",
+  "EntryPoint": "PPF.PPF",
+  "Tags": [
+    "Framework",
+    "Powers",
+    "Ui"
+  ],
+  "Scripts": [
+    "Main.cs",
+    "Syringes.cs",
+    "Scripts/Powers/HeadExploderPowerExample.cs",
+    "Scripts/Powers/HealerExamplePower.cs",
+    "Scripts/Powers/LaserEyesPowerExample.cs",
+    "Scripts/Powers/PowerBase.cs",
+    "Scripts/Powers/PowerTemplate.cs",
+    "Scripts/Powers/FlyingFistPowerExample.cs",
+    "Scripts/Powers/GrenadierPowerExample.cs",
+    "Scripts/Powers/ThickSkinPowerExample.cs"
+  ],
+  "Active": false,
+  "UGCIdentity": null,
+  "CreatorUGCIdentity": null
+}
