@@ -14,12 +14,15 @@ namespace PPF
     {
         /// Team Wilson's Power Pack Framework: Power Template
 
-        public void Awake()
+        public void Start()
         {
             //We set our base info and values here
             PowerName = "Power name";
             //We set our power activation type (Head,Chest,Hand)
             Activation = "Head";
+
+            //Always keep this
+            base.Start();
         }
         
         //This is the actual power part of your power, this function will trigger when the activation limb is used.
