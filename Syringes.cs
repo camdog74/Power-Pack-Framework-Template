@@ -9,7 +9,7 @@ namespace PPF
 {
     #region SyringeObjects
 
-    internal class TemplateSyringe : SyringeBehaviour
+    internal class TemplateSyringe : OldSyringeBehaviour
     {
         public override Type GetPoisonType()
         {
@@ -18,14 +18,14 @@ namespace PPF
     }
     
     
-    internal class LaserEyeExampleSyringe : SyringeBehaviour
+    internal class LaserEyeExampleSyringe : OldSyringeBehaviour
     {
         public override Type GetPoisonType()
         {
             return typeof(LaserEyeExamplePoison);
         }
     }
-    internal class HeadExploderExampleSyringe : SyringeBehaviour
+    internal class HeadExploderExampleSyringe : OldSyringeBehaviour
     {
         public override Type GetPoisonType()
         {
@@ -33,14 +33,14 @@ namespace PPF
         }
     }
 
-    internal class HealerExampleSyringe : SyringeBehaviour
+    internal class HealerExampleSyringe : OldSyringeBehaviour
     {
         public override Type GetPoisonType()
         {
             return typeof(HealerExamplePoison);
         }
     }
-    internal class ThickSkinExampleSyringe : SyringeBehaviour
+    internal class ThickSkinExampleSyringe : OldSyringeBehaviour
     {
         public override Type GetPoisonType()
         {
@@ -48,14 +48,14 @@ namespace PPF
         }
     }
 
-    internal class FlyingFistExampleSyringe : SyringeBehaviour
+    internal class FlyingFistExampleSyringe : OldSyringeBehaviour
     {
         public override Type GetPoisonType()
         {
             return typeof(FlyingFistExamplePoison);
         }
     }
-    internal class GrenadierExampleSyringe : SyringeBehaviour
+    internal class GrenadierExampleSyringe : OldSyringeBehaviour
     {
         public override Type GetPoisonType()
         {

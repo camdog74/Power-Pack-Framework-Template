@@ -14,6 +14,7 @@
   "Scripts": [
     "Main.cs",
     "Syringes.cs",
+    "PowerPackFrameworkFunctions.cs",
     "Scripts/Powers/HeadExploderPowerExample.cs",
     "Scripts/Powers/HealerExamplePower.cs",
     "Scripts/Powers/LaserEyesPowerExample.cs",
@@ -23,7 +24,7 @@
     "Scripts/Powers/GrenadierPowerExample.cs",
     "Scripts/Powers/ThickSkinPowerExample.cs"
   ],
-  "Active": false,
+  "Active": true,
   "UGCIdentity": null,
   "CreatorUGCIdentity": null
 }

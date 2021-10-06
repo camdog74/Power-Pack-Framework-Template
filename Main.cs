@@ -42,6 +42,8 @@ namespace PPF
             ResourceManager.GetComponent<ResourceStorage>().Sprites.Add("Grenadier Icon", ModAPI.LoadSprite("Art/Icons/Grenadier.png"));
             ResourceManager.GetComponent<ResourceStorage>().Sprites.Add("Thick Skin Icon", ModAPI.LoadSprite("Art/Icons/Thick Skin.png"));
             ResourceManager.GetComponent<ResourceStorage>().Sprites.Add("Big Fist", ModAPI.LoadSprite("Art/Particles/Fist - Copy.png"));
+            ResourceManager.GetComponent<ResourceStorage>().Sprites.Add("Cape Base", ModAPI.LoadSprite("Art/Cape/cape01.png"));
+            ResourceManager.GetComponent<ResourceStorage>().Sprites.Add("Cape Texture", ModAPI.LoadSprite("Art/Cape/cape02.png"));
 
             //TEXTURES
 
@@ -79,7 +81,9 @@ namespace PPF
                                 if (body.gameObject.name.Contains("Head"))
                                 LaserEyesPowerExample.SetUpPower(body, person, Instance,Color.green);
                         }
-                    }
+
+                            PowerPackFrameworkFunctions.CreateCape(person, ResourceManager.GetComponent<ResourceStorage>().Sprites["Cape Texture"], 0.15f, ResourceManager.GetComponent<ResourceStorage>().Sprites["Cape Base"]);
+                        }
                 }
             );
             //Laser eye syringe

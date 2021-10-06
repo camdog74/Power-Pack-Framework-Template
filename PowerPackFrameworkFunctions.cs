@@ -8,8 +8,17 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using System.Reflection;
 
-namespace PowerPackFramework
+namespace PPF
 {
     
-    
+    public class PowerPackFrameworkFunctions
+    {
+        public static void CreateCape(PersonBehaviour person, Sprite CapeTexture,float CapeThickness = 0.15f, Sprite CapeBaseSprite = null)
+        {
+            List<object> CapeInfo = new List<object>() { person, CapeTexture,CapeThickness, CapeBaseSprite };
+
+            if (GameObject.Find("PowerPackFrameworkManager"))
+                GameObject.Find("PowerPackFrameworkManager").SendMessage("CreateCape", CapeInfo);
+        }
+    }
 }
