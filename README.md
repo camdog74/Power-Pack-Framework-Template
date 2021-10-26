@@ -48,17 +48,11 @@ Thats pretty much all you need to do.
 NOTE: if there are any new functions added to the PPF, you will need to redownload the "PowerPackFrameworkFunctions.cs" file.
 # 3. Power Creation
 In order to use the template to make powers, copy and past it and rename it to what your power is, make sure you rename the class throughout the template.
+
 ###Creating a syringe for your power
-There are two ways to make syringes, using the old method and the new method.
+There are two ways to make syringes, using the old method and the new method. The old method uses the first syringe system that was in the game and the new one is liquid based, use whichever suits your needs. 
 
-Old method
-The old method is still supported but has since been replaced, hence the "old" method.
-
-
-New method
-The new method is based off of the new liquid system.
-
-
+In order to give a character powers using a syringe, just get the person behaviour on the limb and use your powers setup on the limb you want
 
 
 The script itself is heavily commented and should have all the info you need to start your own script.
