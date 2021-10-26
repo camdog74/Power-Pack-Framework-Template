@@ -51,11 +51,11 @@ In order to use the template to make powers, copy and past it and rename it to w
 ###Creating a syringe for your power
 There are two ways to make syringes, using the old method and the new method.
 
-####Old method
+Old method
 The old method is still supported but has since been replaced, hence the "old" method.
 
 
-####New method
+New method
 The new method is based off of the new liquid system.
 
 
