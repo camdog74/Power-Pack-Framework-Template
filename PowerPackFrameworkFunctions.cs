@@ -20,5 +20,15 @@ namespace PPF
             if (GameObject.Find("PowerPackFrameworkManager"))
                 GameObject.Find("PowerPackFrameworkManager").SendMessage("CreateCape", CapeInfo);
         }
+
+
+
+        public static void AddSkin(PersonBehaviour person,Texture2D texture, string Description = null)
+        {
+            List<object> SkinInfo = new List<object>() {person, texture,Description};
+
+            if (GameObject.Find("PowerPackFrameworkManager"))
+                GameObject.Find("PowerPackFrameworkManager").SendMessage("AddSkinToCharacter", SkinInfo);
+        }
     }
 }

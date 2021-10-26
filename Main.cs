@@ -88,6 +88,7 @@ namespace PPF
                         }
 
                         PowerPackFrameworkFunctions.CreateCape(person, ResourceStorage.CapeTexture, 0.15f, ResourceStorage.CapeBase);
+                        PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Skin Layer.png"), "This is a test skin");
                     }
                 }
             );
