@@ -7,7 +7,8 @@ You can look through all the heavily commented code and get an understanding on 
 # Navigation
 1. Introduction
 2. Setup
-3. Functions
+3. Power Creation
+4. Functions
 
 
 # 1. Introduction
@@ -45,9 +46,24 @@ Download the template mod and change the " Mod.json " to your likings.
 Thats pretty much all you need to do.
 
 NOTE: if there are any new functions added to the PPF, you will need to redownload the "PowerPackFrameworkFunctions.cs" file.
+# 3. Power Creation
+In order to use the template to make powers, copy and past it and rename it to what your power is, make sure you rename the class throughout the template.
+###Creating a syringe for your power
+There are two ways to make syringes, using the old method and the new method.
+
+####Old method
+The old method is still supported but has since been replaced, hence the "old" method.
 
 
-# 3. Functions
+####New method
+The new method is based off of the new liquid system.
+
+
+
+
+The script itself is heavily commented and should have all the info you need to start your own script.
+
+# 4. Functions
 ## Adding capes to a character
 
 | Varriable Name  | Varriable Type|Usage|
