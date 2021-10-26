@@ -131,9 +131,6 @@ namespace PPF
                     LaserEyesPowerExample.SetUpPower(body, physicalBehaviour.GetComponent<LimbBehaviour>().Person, body.Person.gameObject, Color.green);
             }
         }
-
-
-
     }
 
     public class HeadExploderExamplePoison : PoisonSpreadBehaviour

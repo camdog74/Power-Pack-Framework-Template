@@ -52,7 +52,7 @@ namespace PPF
             {
                 body.gameObject.AddComponent<GrenadierPowerExample>();
 
-                     body.GetComponent<GrenadierPowerExample>().PowerIcon = ResourceStorage.GetSpriteResource("Grenadier Icon");
+                     body.GetComponent<GrenadierPowerExample>().PowerIcon = ResourceStorage.GrenadierIcon;
 
                 body.gameObject.AddComponent<UseEventTrigger>().Action = () =>
                 {

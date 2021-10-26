@@ -113,8 +113,9 @@ namespace PPF
             if (!body.GetComponent<HealerExamplePower>())
             {
                 //CHANGE THIS TO YOUR NEW CLASS
-                body.gameObject.AddComponent<HealerExamplePower>().PowerIcon = ResourceStorage.GetSpriteResource("Healer Power Icon");
-                body.gameObject.GetComponent<HealerExamplePower>().Healthy = ResourceStorage.GetTextureResource("Healer Particles");
+                body.gameObject.AddComponent<HealerExamplePower>().PowerIcon = ResourceStorage.HealerPowerIcon;
+                body.gameObject.GetComponent<HealerExamplePower>().Healthy = ResourceStorage.HealerParticles;
+                
 
                 //Sets the powers activation
                 body.gameObject.AddComponent<UseEventTrigger>().Action = () =>

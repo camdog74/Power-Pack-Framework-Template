@@ -22,15 +22,15 @@ namespace PPF
                 GameObject Projectile = new GameObject("Fist");
                 //Add an audio source so we can play sounds from the object
                 Projectile.AddComponent<AudioSource>().spatialBlend = 1;
-                Projectile.GetComponent<AudioSource>().clip = ResourceStorage.GetSoundResource("Fist Amb");
+                Projectile.GetComponent<AudioSource>().clip = ResourceStorage.FistAmb;
                 Projectile.GetComponent<AudioSource>().loop = true;
                 Projectile.GetComponent<AudioSource>().Play();
-                Projectile.GetComponent<AudioSource>().PlayOneShot(ResourceStorage.GetSoundResource("Fist Shoot"));
+                Projectile.GetComponent<AudioSource>().PlayOneShot(ResourceStorage.FistShoot);
                 //set the position to the user's hand
                 Projectile.transform.position = transform.position;
                 Projectile.transform.eulerAngles = transform.eulerAngles;
                 //add a sprite to the object
-                Projectile.AddComponent<SpriteRenderer>().sprite = ResourceStorage.GetSpriteResource("Big Fist");
+                Projectile.AddComponent<SpriteRenderer>().sprite = ResourceStorage.BigFist;
                 Projectile.GetComponent<SpriteRenderer>().color = Color.clear;
                 //Add a collider to the object
                 Projectile.AddComponent<PolygonCollider2D>();
@@ -59,7 +59,7 @@ namespace PPF
                 //The following code was generated with Camdog74's People Play-Tools (currently not for public use)
                 ParticleSystem particleSystem = ParticleObject.AddComponent<ParticleSystem>();
                 ParticleObject.GetComponent<ParticleSystemRenderer>().material = new Material(ModAPI.FindMaterial("Sprites-Default"));
-                ParticleObject.GetComponent<ParticleSystemRenderer>().material.mainTexture = ResourceStorage.GetTextureResource("Fist Particles");
+                ParticleObject.GetComponent<ParticleSystemRenderer>().material.mainTexture = ResourceStorage.FistParticles;
                 ParticleObject.GetComponent<ParticleSystemRenderer>().sortingLayerName = "Foreground";
                 ParticleSystem.MainModule main = particleSystem.main;
                 ParticleSystem.ShapeModule shape = particleSystem.shape;
@@ -131,7 +131,7 @@ namespace PPF
             {
                 body.gameObject.AddComponent<FlyingFistPowerExample>();
 
-                body.GetComponent<FlyingFistPowerExample>().PowerIcon = ResourceStorage.GetSpriteResource("Head Exploder Power Icon");
+                body.GetComponent<FlyingFistPowerExample>().PowerIcon = ResourceStorage.FlyingFistIcon;
 
                 body.gameObject.AddComponent<UseEventTrigger>().Action = () =>
                 {

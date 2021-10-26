@@ -55,7 +55,7 @@ namespace PPF
             {
                 body.gameObject.AddComponent<HeadExploderPowerExample>();
 
-                body.GetComponent<HeadExploderPowerExample>().PowerIcon = ResourceStorage.GetSpriteResource("Head Exploder Power Icon");
+                body.GetComponent<HeadExploderPowerExample>().PowerIcon = ResourceStorage.HeadExploderPowerIcon;
 
                 body.gameObject.AddComponent<UseEventTrigger>().Action = () =>
                 {

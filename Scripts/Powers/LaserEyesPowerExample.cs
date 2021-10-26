@@ -72,7 +72,7 @@ namespace PPF
             if (!body.GetComponent<LaserEyesPowerExample>())
             {
                 //Adds the power/script and sets the laser sound at the same time
-                body.gameObject.AddComponent<LaserEyesPowerExample>().LaserSound = ResourceStorage.GetSoundResource("Laser Shoot");
+                body.gameObject.AddComponent<LaserEyesPowerExample>().LaserSound = ResourceStorage.LaserShoot;
 
 
                 body.gameObject.GetComponent<LaserEyesPowerExample>().LaserColor = LaserColor;
@@ -83,7 +83,7 @@ namespace PPF
                     body.gameObject.GetComponent<LaserEyesPowerExample>().UsePower();
                 };
 
-                body.GetComponent<LaserEyesPowerExample>().PowerIcon = ResourceStorage.GetSpriteResource("Laser Eyes Power Icon"); ;
+                body.GetComponent<LaserEyesPowerExample>().PowerIcon = ResourceStorage.LaserEyesPowerIcon; ;
             }
         }
     }

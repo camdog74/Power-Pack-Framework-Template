@@ -49,7 +49,7 @@ namespace PPF
                 //Adds your new power to the person NOTE:make sure to change the class to your new power class
                 body.gameObject.AddComponent<PowerTemplate>();
                 //This sets the power's icon, make sure you add the your new icon to the ResourceStorage NOTE:make sure to change the class to your new power class
-                body.GetComponent<PowerTemplate>().PowerIcon = ResourceStorage.GetSpriteResource("PUT YOUR ICON HERE!");
+          ///      body.GetComponent<PowerTemplate>().PowerIcon = ResourceStorage.PUTYOURICONHERE
 
                 body.gameObject.AddComponent<UseEventTrigger>().Action = () =>
                 {

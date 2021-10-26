@@ -120,7 +120,7 @@ namespace PPF
             {
                 body.gameObject.AddComponent<ThickSkinPowerExample>();
 
-                body.GetComponent<ThickSkinPowerExample>().PowerIcon = ResourceStorage.GetSpriteResource("Thick Skin Icon");
+                body.GetComponent<ThickSkinPowerExample>().PowerIcon = ResourceStorage.ThickSkinIcon;
 
                 body.gameObject.AddComponent<UseEventTrigger>().Action = () =>
                 {
