@@ -6,13 +6,11 @@ You can look through all the heavily commented code and get an understanding on 
 
 # Navigation
 1. Introduction
-
-
+2. Setup
+3. Functions
 
 
 # 1. Introduction
-
-
 The Power Pack Framework's (PPF) purpose is to give the community features that the Marvel Power Pack has like the power menu, capes, etc.
 
 There are two parts to the PPF as a whole, your local mod and the PPF mod on the workshop.
@@ -41,3 +39,21 @@ The reason why the framework being its own mod is so importaint is so updates to
 It also allows two mods using the framework to have their powers in the same menu together, like DC powers with Marvel powers.
 
 NOTE: Your mod is playable without the framework installed but there will be missing features (power menu, cape, etc).
+# 2. Setup
+Download the template mod and change the " Mod.json " to your likings.
+![](https://i.imgur.com/Zxz9bbn.png)
+Thats pretty much all you need to do.
+
+NOTE: if there are any new functions added to the PPF, you will need to redownload the "PowerPackFrameworkFunctions.cs" file.
+
+
+# 3. Functions
+## Adding capes to a character
+
+| Varriable Name  | Varriable Type|Usage|
+| ------------- | ------------- | ------------- |
+| person  | PersonBehaviour  | Specifies who will get the cape.|
+| Cape Texture  | Sprite  |The texture of the cape.|
+| Cape Base Texture  | Sprite  |The texture of the base of the cape.|
+    PPF.PowerPackFrameworkFunctions.CreateCape(person, ResourceStorage.Sprite_SupermanCape, 0.078f, ResourceStorage.Sprite_BatmanCapeBase);
+This function is used to create capes, you can currently only change their appearance. 
