@@ -49,7 +49,7 @@ NOTE: if there are any new functions added to the PPF, you will need to redownlo
 # 3. Power Creation
 In order to use the template to make powers, copy and past it and rename it to what your power is, make sure you rename the class throughout the template.
 
-###Creating a syringe for your power
+Creating a syringe for your power
 There are two ways to make syringes, using the old method and the new method. The old method uses the first syringe system that was in the game and the new one is liquid based, use whichever suits your needs. 
 
 In order to give a character powers using a syringe, just get the person behaviour on the limb and use your powers setup on the limb you want
