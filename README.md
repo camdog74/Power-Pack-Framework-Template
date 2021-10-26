@@ -65,5 +65,21 @@ The script itself is heavily commented and should have all the info you need to 
 | person  | PersonBehaviour  | Specifies who will get the cape.|
 | Cape Texture  | Sprite  |The texture of the cape.|
 | Cape Base Texture  | Sprite  |The texture of the base of the cape.|
+
+Code example
+
     PPF.PowerPackFrameworkFunctions.CreateCape(person, ResourceStorage.Sprite_SupermanCape, 0.078f, ResourceStorage.Sprite_BatmanCapeBase);
 This function is used to create capes, you can currently only change their appearance. 
+
+## Adding skins to a character
+
+| Varriable Name  | Varriable Type|Usage|
+| ------------- | ------------- | ------------- |
+| person  | PersonBehaviour  | Specifies who will get the new skin.|
+| Skin Texture  | Texture2D  |The texture of the skin.|
+| Description  | String  |The description of the new skin.|
+
+Code example
+
+    PPF.PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Assets/People/Superman/skins/Bizzaro.png"), "Bizzaro, Superman's odd clone.");
+This function is used to add new skins to characters, you can't to any complex things yet but you can swap the actual skins.
