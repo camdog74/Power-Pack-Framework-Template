@@ -68,7 +68,10 @@ The script itself is heavily commented and should have all the info you need to 
 
 Code example
 
- PPF.PowerPackFrameworkFunctions.CreateCape(person, ResourceStorage.Sprite_SupermanCape, 0.078f, ResourceStorage.Sprite_BatmanCapeBase);
+
+
+    PPF.PowerPackFrameworkFunctions.CreateCape(person, ResourceStorage.Sprite_SupermanCape, 0.078f, ResourceStorage.Sprite_BatmanCapeBase);
+
 This function is used to create capes, you can currently only change their appearance. 
 
 ## Adding skins to a character
@@ -81,5 +84,8 @@ This function is used to create capes, you can currently only change their appea
 
 Code example
 
- PPF.PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Assets/People/Superman/skins/Bizzaro.png"), "Bizzaro, Superman's odd clone.");
+
+
+    PPF.PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Assets/People/Superman/skins/Bizzaro.png"), "Bizzaro, Superman's odd clone.");
+
 This function is used to add new skins to characters, you can't to any complex things yet but you can swap the actual skins.
