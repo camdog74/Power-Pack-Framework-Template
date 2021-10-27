@@ -19,9 +19,9 @@ There are two parts to the PPF as a whole, your local mod and the PPF mod on the
 
 ![](https://i.imgur.com/sK5g0RE.png)
 
-These mods are not initally connected but under the correct circumstances, they can communicate.
+These mods are not initially connected but under the correct circumstances, they can communicate.
 
-The creation of powers is entirely in your mod using the template (power creation [PART HERE]), what the PPF workshop mod serves as is a conduit for multiple mods to use the same systems like the power menu.
+The creation of powers is entirely in your mod using the template (power creation [PART HERE]), what the PPF workshop mod serves as is a conduit for multiple mods to use the same systems as the power menu.
 
 
 
@@ -36,23 +36,23 @@ The framework can talk to your mod and powers by using messages which allows it 
 ## Why seperate the menu from the template?
 
 
-The reason why the framework being its own mod is so importaint is so updates to the system are synced to every mod automatically via the workshop, meaning you don't have to update your code everytime theres a new update (the exeption being PowerPackFrameworkFunctions.cs but thats not required).
+The reason why the framework being its own mod is so important is so updates to the system are synced to every mod automatically via the workshop, meaning you don't have to update your code everytime there's a new update (the exception being PowerPackFrameworkFunctions.cs but thats not required).
 It also allows two mods using the framework to have their powers in the same menu together, like DC powers with Marvel powers.
 
 NOTE: Your mod is playable without the framework installed but there will be missing features (power menu, cape, etc).
 # 2. Setup
-Download the template mod and change the " Mod.json " to your likings.
+Downloads the template mod and change the " Mod.json " to your likings.
 ![](https://i.imgur.com/Zxz9bbn.png)
-Thats pretty much all you need to do.
+That's pretty much all you need to do.
 
-NOTE: if there are any new functions added to the PPF, you will need to redownload the "PowerPackFrameworkFunctions.cs" file.
+NOTE: if there are any new functions added to the PPF, you will need to re download the "PowerPackFrameworkFunctions.cs" file.
 # 3. Power Creation
 In order to use the template to make powers, copy and past it and rename it to what your power is, make sure you rename the class throughout the template.
 
 Creating a syringe for your power
 There are two ways to make syringes, using the old method and the new method. The old method uses the first syringe system that was in the game and the new one is liquid based, use whichever suits your needs. 
 
-In order to give a character powers using a syringe, just get the person behaviour on the limb and use your powers setup on the limb you want
+In order to give a character powers using a syringe, just get the person behaviour on the limb and use your powers setup on the limb you want.
 
 
 The script itself is heavily commented and should have all the info you need to start your own script.
@@ -60,26 +60,26 @@ The script itself is heavily commented and should have all the info you need to 
 # 4. Functions
 ## Adding capes to a character
 
-| Varriable Name  | Varriable Type|Usage|
+| Variable Name | Variable Type|Usage|
 | ------------- | ------------- | ------------- |
-| person  | PersonBehaviour  | Specifies who will get the cape.|
-| Cape Texture  | Sprite  |The texture of the cape.|
-| Cape Base Texture  | Sprite  |The texture of the base of the cape.|
+| person | PersonBehaviour | Specifies who will get the cape.|
+| Cape Texture | Sprite |The texture of the cape.|
+| Cape Base Texture | Sprite |The texture of the base of the cape.|
 
 Code example
 
-    PPF.PowerPackFrameworkFunctions.CreateCape(person, ResourceStorage.Sprite_SupermanCape, 0.078f, ResourceStorage.Sprite_BatmanCapeBase);
+ PPF.PowerPackFrameworkFunctions.CreateCape(person, ResourceStorage.Sprite_SupermanCape, 0.078f, ResourceStorage.Sprite_BatmanCapeBase);
 This function is used to create capes, you can currently only change their appearance. 
 
 ## Adding skins to a character
 
-| Varriable Name  | Varriable Type|Usage|
+| Variable Name | Variable Type|Usage|
 | ------------- | ------------- | ------------- |
-| person  | PersonBehaviour  | Specifies who will get the new skin.|
-| Skin Texture  | Texture2D  |The texture of the skin.|
-| Description  | String  |The description of the new skin.|
+| person | PersonBehaviour | Specifies who will get the new skin.|
+| Skin Texture | Texture2D |The texture of the skin.|
+| Description | String |The description of the new skin.|
 
 Code example
 
-    PPF.PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Assets/People/Superman/skins/Bizzaro.png"), "Bizzaro, Superman's odd clone.");
+ PPF.PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Assets/People/Superman/skins/Bizzaro.png"), "Bizzaro, Superman's odd clone.");
 This function is used to add new skins to characters, you can't to any complex things yet but you can swap the actual skins.
