@@ -23,12 +23,32 @@ namespace PPF
 
 
 
-        public static void AddSkin(PersonBehaviour person,Texture2D texture, string Description = null)
+        public static void AddSkin(PersonBehaviour person,Texture2D texture, string SkinName, string Description)
         {
-            List<object> SkinInfo = new List<object>() {person, texture,Description};
+            List<object> SkinInfo = new List<object>() {person, texture,SkinName,Description};
 
             if (GameObject.Find("PowerPackFrameworkManager"))
                 GameObject.Find("PowerPackFrameworkManager").SendMessage("AddSkinToCharacter", SkinInfo);
+        }
+        public static void AddCustomSpriteToSkin(PersonBehaviour person ,int TargetLimb, string SkinName, Sprite Skin, Texture2D Flesh, Texture2D Bone)
+        {
+            List<object> CustomSpriteInfo = new List<object>() {person,TargetLimb,SkinName,Skin, Flesh,Bone };
+
+            if (GameObject.Find("PowerPackFrameworkManager"))
+                GameObject.Find("PowerPackFrameworkManager").SendMessage("AddCustomBodyPartToSkin", CustomSpriteInfo);
+        }
+
+        public static void SetCustomSprite(LimbBehaviour BodyPart,Sprite Skin,Texture2D Flesh, Texture2D Bone)
+        {
+            List<object> CustomSpriteInfo = new List<object>() { BodyPart,Skin,Flesh,Bone};
+
+            if (GameObject.Find("PowerPackFrameworkManager"))
+                GameObject.Find("PowerPackFrameworkManager").SendMessage("CustomLimb", CustomSpriteInfo);
+        }
+        public static void SetCustomSpriteActive(bool IsActive)
+        {
+            List<object> CustomSpriteInfo = new List<object>() {IsActive };
+            GameObject.Find("PowerPackFrameworkManager").SendMessage("SetactiveOrNot", CustomSpriteInfo);
         }
     }
 }
