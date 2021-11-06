@@ -89,3 +89,20 @@ Code example
     PPF.PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Assets/People/Superman/skins/Bizzaro.png"), "Bizzaro, Superman's odd clone.");
 
 This function is used to add new skins to characters, you can't to any complex things yet but you can swap the actual skins.
+
+## Adding custom body part sprites (Not fully documented yet)
+
+| Variable Name | Variable Type|Usage|
+| ------------- | ------------- | ------------- |
+| BodyPart | LimbBehaviour | Specifies the limb.|
+| Skin | Sprite |The sprite of the skin.|
+| Flesh | Texture2D |The texture of the Flesh.|
+| Bone | Texture2D |The texture of the Bone.|
+
+Code example
+
+
+
+    PPF.PowerPackFrameworkFunctions.SetCustomSprite(person.Limbs[0],ModAPI.LoadSprite("Art/Skins/Wilson/Head.png"), ModAPI.LoadTexture("Art/Skins/Wilson/Head Flesh.png"), ModAPI.LoadTexture("Art/Skins/Wilson/Head Bone.png"));
+
+This function lets you change sprites and allows you to make art outside the usual texture boundarys on characters.
