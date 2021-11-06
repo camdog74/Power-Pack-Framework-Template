@@ -90,7 +90,6 @@ namespace PPF
                         PowerPackFrameworkFunctions.CreateCape(person, ResourceStorage.CapeTexture, 0.15f, ResourceStorage.CapeBase);
                         PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Art/Skins/Wilson/Skin Layer.png"),"TestSkin", "This is Wilson. He's a test skin in this case, but most importantly <color=red>Team Wilson's<color=white> mascot!");
                         PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Art/Skins/Wilson/skin_layer_1.png"), "BatmanSkin", "This is Wilson, except his parents are dead.");
-                        PowerPackFrameworkFunctions.AddCustomSpriteToSkin(person,0, "TestSkin", ModAPI.LoadSprite("Art/Skins/Wilson/Head.png", 10f), ModAPI.LoadTexture("Art/Skins/Wilson/Head Flesh.png"), ModAPI.LoadTexture("Art/Skins/Wilson/Head Bone.png"));
 
                     }
                 }
