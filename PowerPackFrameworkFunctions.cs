@@ -31,17 +31,15 @@ namespace PPF
                 GameObject.Find("PowerPackFrameworkManager").SendMessage("AddSkinToCharacter", SkinInfo);
         }
 
-        public static void SetCustomSprite(LimbBehaviour BodyPart,Sprite Skin,Texture2D Flesh, Texture2D Bone)
-        {
-            List<object> CustomSpriteInfo = new List<object>() { BodyPart,Skin,Flesh,Bone};
+        
+        //This isn't finished yet and creates errors combined with the skin system
+        
+        //public static void SetCustomSprite(LimbBehaviour BodyPart, Sprite Skin,Texture2D Flesh, Texture2D Bone)
+        //{
+        //    List<object> CustomSpriteInfo = new List<object>() { BodyPart,Skin,Flesh,Bone};
 
-            if (GameObject.Find("PowerPackFrameworkManager"))
-                GameObject.Find("PowerPackFrameworkManager").SendMessage("CustomLimb", CustomSpriteInfo);
-        }
-        public static void SetCustomSpriteActive(bool IsActive)
-        {
-            List<object> CustomSpriteInfo = new List<object>() {IsActive };
-            GameObject.Find("PowerPackFrameworkManager").SendMessage("SetactiveOrNot", CustomSpriteInfo);
-        }
+        //    if (GameObject.Find("PowerPackFrameworkManager"))
+        //        GameObject.Find("PowerPackFrameworkManager").SendMessage("CustomLimb", CustomSpriteInfo);
+        //}
     }
 }
