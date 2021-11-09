@@ -21,7 +21,7 @@ There are two parts to the PPF as a whole, your local mod and the PPF mod on the
 
 These mods are not initially connected but under the correct circumstances, they can communicate.
 
-The creation of powers is entirely in your mod using the template (power creation [PART HERE]), what the PPF workshop mod serves as is a conduit for multiple mods to use the same systems as the power menu.
+The creation of powers is entirely in your mod using the template (power creation 3.), what the PPF workshop mod serves as is a conduit for multiple mods to use the same systems as the power menu.
 
 
 
