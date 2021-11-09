@@ -80,13 +80,14 @@ This function is used to create capes, you can currently only change their appea
 | ------------- | ------------- | ------------- |
 | person | PersonBehaviour | Specifies who will get the new skin.|
 | Skin Texture | Texture2D |The texture of the skin.|
+| Skin Name | String |The ID/name of the new skin|
 | Description | String |The description of the new skin.|
 
 Code example
 
 
 
-    PPF.PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Assets/People/Superman/skins/Bizzaro.png"), "Bizzaro, Superman's odd clone.");
+    PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Art/Skins/Wilson/Skin Layer.png"),"TestSkin", "This is Wilson. He's a test skin in this case, but most importantly <color=red>Team Wilson's<color=white> mascot!");
 
 This function is used to add new skins to characters, you can't to any complex things yet but you can swap the actual skins.
 
