@@ -80,7 +80,6 @@ namespace PPF
                 GetComponent<GripBehaviour>().GripPosition = OriginalHand;
             Enabled = false;
 
-            Debug.Log("disabled");
         }
 
         /// <summary>

@@ -57,6 +57,9 @@ namespace PPF
         public static void Main() 
         {
             
+            
+            
+            
             //Make sure to add new ones when you need to use them instead of using ModAPI.Load in AfterSpawn.
             GameObject ResourceManager = new GameObject();
             ResourceManager.AddComponent<ResourceStorage>();
