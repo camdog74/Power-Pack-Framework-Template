@@ -41,9 +41,9 @@ It also allows two mods using the framework to have their powers in the same men
 
 NOTE: Your mod is playable without the framework installed but there will be missing features (power menu, cape, etc).
 # 2. Setup
-Downloads the template mod and change the " Mod.json " to your likings.
+Download the template mod and change the " Mod.json " to your likings.
 ![](https://i.imgur.com/Zxz9bbn.png)
-That's pretty much all you need to do.
+To be clear, you can change the Mod.json to whatever you want, i just filled it in myself in the picture. That's pretty much all you need to do.
 
 NOTE: if there are any new functions added to the PPF, you will need to re download the "PowerPackFrameworkFunctions.cs" file.
 # 3. Power Creation
