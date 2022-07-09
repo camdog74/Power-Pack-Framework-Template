@@ -75,7 +75,7 @@ Code example
 
 
     //Creates a cape and gives it to the person and also stores it as a variable.
-    var Cape = PowerPackFrameworkFunctions.CreateCape(person, ResourceStorage.CapeTexture, 0.15f, ResourceStorage.CapeBase);
+    var Cape = PPF.PowerPackFrameworkFunctions.CreateCape(person, ResourceStorage.CapeTexture, 0.15f, ResourceStorage.CapeBase);
 
 This function is used to create capes, you can currently only change their appearance. 
 
@@ -94,7 +94,7 @@ Code example
 
 
     //This line below is an example of how to add custom skins to a character.
-    PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Art/Skins/Wilson/Skin Layer.png"),"TestSkin", "This is Wilson. He's a test skin in this case, but most importantly <color=red>Team Wilson's<color=white> mascot!");
+    PPF.PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Art/Skins/Wilson/Skin Layer.png"),"TestSkin", "This is Wilson. He's a test skin in this case, but most importantly <color=red>Team Wilson's<color=white> mascot!");
 
 This function is used to add new skins to characters which lets you change skins when selecting the skin selector option in the context menu (right click menu).
 > Note: The skin ID/Name of the skin your character starts with is called Default.
@@ -114,7 +114,7 @@ Code example
 
 
     //This line of code is how you add a custom limb to the character, in this case, it's a custom head. (Added in v2)
-    PowerPackFrameworkFunctions.AddCustomizedLimbToSkin(person, 0 , "BatmanSkin", ModAPI.LoadSprite("Art/Skins/Wilson/Head.png", 10), ModAPI.LoadTexture("Art/Skins/Wilson/Head Flesh.png"), ModAPI.LoadTexture("Art/Skins/Wilson/Head Bone.png"));
+    PPF.PowerPackFrameworkFunctions.AddCustomizedLimbToSkin(person, 0 , "BatmanSkin", ModAPI.LoadSprite("Art/Skins/Wilson/Head.png", 10), ModAPI.LoadTexture("Art/Skins/Wilson/Head Flesh.png"), ModAPI.LoadTexture("Art/Skins/Wilson/Head Bone.png"));
 
 This function lets you change sprites and allows you to make art outside the usual texture boundarys on characters by creating independant sprites and using them. This does require you to set a flesh and bone layer as well though. 
 > Note:
@@ -164,6 +164,6 @@ Code example
                             ModAPI.Notify("Skin Deselect Action Triggered :D");
                         };
                         //And here we add the events to the skin.
-                        PowerPackFrameworkFunctions.SetSkinEvent(person, "JediSkin", SkinSelectAction, SkinDeselectAction);
+                        PPF.PowerPackFrameworkFunctions.SetSkinEvent(person, "JediSkin", SkinSelectAction, SkinDeselectAction);
 
 This function lets you execute code via a UnityAction allowing you to do cool effects and events when a skin is selected and deselected. 
