@@ -21,6 +21,7 @@ namespace PPF
     // This framework was created by Team Wilson and is allowed to be used in any mod as long as The Power Pack Framework is a required mod (otherwise may be errors).
     // Link to PPF: https://steamcommunity.com/sharedfiles/filedetails/?id=2506978276
     // Framework coded by 🥧 Camdog74 🥧
+    // VERSION 2.0.0
 
 
     //This is where you store all of your assets like your sprites, textures and sounds. (power icons too)
@@ -82,18 +83,53 @@ namespace PPF
                         //get person
                         var person = Instance.GetComponent<PersonBehaviour>();
 
-                        //Gets all the characters limbs
-                        foreach (var body in person.Limbs)
-                        {
-                            //Sets up power on specific bodypart. supported bodyparts are (Head,LowerArm,UpperBody)
-                            if (body.gameObject.name.Contains("Head"))
-                                LaserEyesPowerExample.SetUpPower(body, person, Instance, Color.green);
-                        }
+                        //Gives laser eyes power to head
+                        LaserEyesPowerExample.SetUpPower(person.Limbs[0], person, Instance, Color.green);
+                        //Gives Healer power to chest
+                        HealerExamplePower.SetUpPower(person.Limbs[1], person, Instance);
 
-                        PowerPackFrameworkFunctions.CreateCape(person, ResourceStorage.CapeTexture, 0.15f, ResourceStorage.CapeBase);
+                        //Creates a cape and gives it to the person and also stores it as a variable.
+                        var Cape = PowerPackFrameworkFunctions.CreateCape(person, ResourceStorage.CapeTexture, 0.15f, ResourceStorage.CapeBase);
+
+                        //The three lines below are examples of how to add custom skins to the character.
                         PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Art/Skins/Wilson/Skin Layer.png"),"TestSkin", "This is Wilson. He's a test skin in this case, but most importantly <color=red>Team Wilson's<color=white> mascot!");
-                        PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Art/Skins/Wilson/skin_layer_1.png"), "BatmanSkin", "This is Wilson, except his parents are dead.");                  
+                        PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Art/Skins/Wilson/skin_layer_1.png"), "BatmanSkin", "This is Wilson, except his parents are dead.");
+                        PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Art/Skins/Wilson/Wilson.png"), "JediSkin", "This is Wilson, except he's green now.");
+                        //These two lines of code are how you add a custom limb to the character, in this case, it's custom heads. (Added in v2)
+                        PowerPackFrameworkFunctions.AddCustomizedLimbToSkin(person, 0 , "BatmanSkin", ModAPI.LoadSprite("Art/Skins/Wilson/Head.png", 10), ModAPI.LoadTexture("Art/Skins/Wilson/Head Flesh.png"), ModAPI.LoadTexture("Art/Skins/Wilson/Head Bone.png"));
+                        PowerPackFrameworkFunctions.AddCustomizedLimbToSkin(person, 0, "JediSkin", ModAPI.LoadSprite("Art/Skins/Wilson/Head 2.png", 10), ModAPI.LoadTexture("Art/Skins/Wilson/Head Flesh.png"), ModAPI.LoadTexture("Art/Skins/Wilson/Head Bone.png"));
 
+                        //The following lines of code are examples of how to add a skin events to your skin which executes a UnityAction. (Added in v2)
+                        //and runs code on selection and deselection.
+                        
+                        //Here we set up the skin selection action.
+                        UnityAction SkinSelectAction = () => 
+                        {
+                            foreach (var item in person.Limbs)
+                            {
+                                item.PhysicalBehaviour.MakeWeightless();
+                            }
+                            if (Cape.activeInHierarchy)
+                            {
+                                Cape.SetActive(false);
+                            }
+                            ModAPI.Notify("Skin Select Action Triggered :D");
+                        };
+                        //And here we set up the skin deselection action.
+                        UnityAction SkinDeselectAction = () =>
+                        {
+                            foreach (var item in person.Limbs)
+                            {
+                                item.PhysicalBehaviour.MakeWeightful();
+                            }
+                            if (!Cape.activeInHierarchy)
+                            {
+                                Cape.SetActive(true);
+                            }
+                            ModAPI.Notify("Skin Deselect Action Triggered :D");
+                        };
+                        //And here we add the events to the skin.
+                        PowerPackFrameworkFunctions.SetSkinEvent(person, "JediSkin", SkinSelectAction, SkinDeselectAction);
                     }
                 }
             );

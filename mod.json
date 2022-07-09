@@ -24,7 +24,7 @@
     "Scripts/Powers/GrenadierPowerExample.cs",
     "Scripts/Powers/ThickSkinPowerExample.cs"
   ],
-  "Active": false,
+  "Active": true,
   "UGCIdentity": null,
   "CreatorUGCIdentity": null
 }
