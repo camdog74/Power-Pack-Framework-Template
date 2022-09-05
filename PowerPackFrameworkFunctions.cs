@@ -95,8 +95,6 @@ namespace PPF
             {
                 if (!GameObject.Find("AThingForThingsPowerPackThing"))
                 {
-                    GameObject UrlObject = new GameObject("AThingForThingsPowerPackThing");
-                    UrlObject.AddComponent<URLOpenBehaviour>();
                     foreach (var mod in ModLoader.LoadedMods)
                     {
                         if (mod.CreatorUGCIdentity == "2506978276")

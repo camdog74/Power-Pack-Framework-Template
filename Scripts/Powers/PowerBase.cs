@@ -63,7 +63,7 @@ namespace PPF
             {
                 GameObject UrlObject = new GameObject();
                 UrlObject.AddComponent<URLOpenBehaviour>();
-                DialogBoxManager.Dialog("POWER PACK FRAMEWORK NOT INSTALLED/ENABLED\nYour mods won't work properly without it", new DialogButton("Close", true), new DialogButton("Workshop Page", true, new UnityAction[1] { (UnityAction)(() => { UrlObject.GetComponent<URLOpenBehaviour>().OpenURL("https://steamcommunity.com/workshop/filedetails/?id=2506978276"); }) }));
+                DialogBoxManager.Dialog("POWER PACK FRAMEWORK NOT INSTALLED/ENABLED\nYour mods won't work properly without it", new DialogButton("Close", true));
             }
             EnablePower();
         }
