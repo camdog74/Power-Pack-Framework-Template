@@ -16,8 +16,8 @@ namespace PPF
             return typeof(TemplatePoison);
         }
     }
-    
-    
+
+
     internal class LaserEyeExampleSyringe : OldSyringeBehaviour
     {
         public override Type GetPoisonType()
@@ -60,6 +60,20 @@ namespace PPF
         public override Type GetPoisonType()
         {
             return typeof(GrenadierExamplePoison);
+        }
+    }
+    internal class PowerDisablerSyringe : OldSyringeBehaviour
+    {
+        public override Type GetPoisonType()
+        {
+            return typeof(PowerDisablerPoison);
+        }
+    }
+    internal class PowerRemoverSyringe : OldSyringeBehaviour
+    {
+        public override Type GetPoisonType()
+        {
+            return typeof(PowerRemoverPoison);
         }
     }
 
@@ -300,10 +314,74 @@ namespace PPF
 
     }
 
+    public class PowerDisablerPoison : PoisonSpreadBehaviour
+    {
+        public LimbBehaviour limb;
+
+        public override float SpreadSpeed
+        {
+            get
+            {
+                return 0;
+            }
+        }
+
+        public override float Lifespan
+        {
+            get
+            {
+                return 1;
+            }
+        }
+
+        public override void Start()
+        {
+            PhysicalBehaviour physicalBehaviour = this.Limb.PhysicalBehaviour;
+            foreach (var body in physicalBehaviour.GetComponent<LimbBehaviour>().Person.Limbs)
+            {
+                if (body.gameObject.GetComponent<PowerBase>())
+                {
+                    body.gameObject.GetComponent<PowerBase>().DisablePower();
+                }
+            }
+        }
+
+    
+    }
+
+    public class PowerRemoverPoison : PoisonSpreadBehaviour
+        {
+            public LimbBehaviour limb;
+
+            public override float SpreadSpeed
+            {
+                get
+                {
+                    return 0;
+                }
+            }
+
+            public override float Lifespan
+            {
+                get
+                {
+                    return 1;
+                }
+            }
+
+            public override void Start()
+            {
+                PhysicalBehaviour physicalBehaviour = this.Limb.PhysicalBehaviour;
+                foreach (var body in physicalBehaviour.GetComponent<LimbBehaviour>().Person.Limbs)
+                {
+                    if (body.gameObject.GetComponent<PowerBase>())
+                    {
+                        body.gameObject.GetComponent<PowerBase>().RemovePower();
+                    }
+                }
+            }
 
 
 
-
-
-
-}    
+        }
+}

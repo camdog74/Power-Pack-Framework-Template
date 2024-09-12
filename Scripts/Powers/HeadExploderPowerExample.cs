@@ -17,7 +17,8 @@ namespace PPF
         {
             //We set our base info and values here
             PowerName = "Head Exploder";
-            Activation = "Head";
+            PowerDescription = "Explodes all heads in a nearby";
+            Activation = "Passive";
         }
         public override void UsePower()
         {

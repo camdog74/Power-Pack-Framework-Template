@@ -52,12 +52,36 @@ namespace PPF
             }
         }
 
-        public static void AddCustomizedLimbToSkin(PersonBehaviour person, int TargetLimb, string SkinName, Sprite NewSkin, Texture2D NewFlesh, Texture2D NewBone)
+        public static void SetSkin(PersonBehaviour person, string SkinName)
+        {
+            List<object> SkinInfo = new List<object>() { person, SkinName };
+            Debug.Log("Setting skindsasdasd");
+            if (GameObject.Find("PowerPackFrameworkManager"))
+                GameObject.Find("PowerPackFrameworkManager").SendMessage("SetSkin", SkinInfo);
+            else
+            {
+                CheckforPPF();
+            }
+        }
+        
+        public static void AddCustomizedLimbToSkin(PersonBehaviour person, int TargetLimb, string SkinName, Sprite NewSkin, Texture2D NewFlesh = null, Texture2D NewBone = null)
         {
             List<object> CustomLimbInfo = new List<object>() { person, TargetLimb, SkinName, NewSkin, NewFlesh, NewBone };
 
             if (GameObject.Find("PowerPackFrameworkManager"))
                 GameObject.Find("PowerPackFrameworkManager").SendMessage("AddCustomLimbToSkin", CustomLimbInfo);
+            else
+            {
+                CheckforPPF();
+            }
+        }
+
+        public static void SetSkinCustomThumbnail(PersonBehaviour person, string SkinName, Sprite Thumbnail)
+        {
+            List<object> SkinThumbnailInfo = new List<object>() { person, SkinName, Thumbnail };
+
+            if (GameObject.Find("PowerPackFrameworkManager"))
+                GameObject.Find("PowerPackFrameworkManager").SendMessage("SetSkinThumbnail", SkinThumbnailInfo);
             else
             {
                 CheckforPPF();
@@ -76,7 +100,6 @@ namespace PPF
             }
         }
 
-
         //This isn't finished yet and creates errors combined with the skin system
 
         //public static void SetCustomSprite(LimbBehaviour BodyPart, Sprite Skin,Texture2D Flesh, Texture2D Bone)
@@ -94,6 +117,8 @@ namespace PPF
             {
                 if (!GameObject.Find("AThingForThingsPowerPackThing"))
                 {
+                    GameObject UrlObject = new GameObject("AThingForThingsPowerPackThing");
+                    UrlObject.AddComponent<URLOpenBehaviour>();
                     foreach (var mod in ModLoader.LoadedMods)
                     {
                         if (mod.CreatorUGCIdentity == "2506978276")

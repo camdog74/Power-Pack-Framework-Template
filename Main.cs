@@ -20,7 +20,7 @@ namespace PPF
     // This framework was created by Team Wilson and is allowed to be used in any mod as long as The Power Pack Framework is a required mod (otherwise may be errors).
     // Link to PPF: https://steamcommunity.com/sharedfiles/filedetails/?id=2506978276
     // Framework coded by 🥧 Camdog74 🥧
-    // VERSION 2.0.0
+    // VERSION 3.0.0
 
 
     //This is where you store all of your assets like your sprites, textures and sounds. (power icons too)
@@ -32,34 +32,45 @@ namespace PPF
 
 
 
-        public static Sprite HealerPowerIcon = ModAPI.LoadSprite("Art/Icons/Healer.png");
-        public static Sprite HeadExploderPowerIcon = ModAPI.LoadSprite("Art/Icons/Head Exploder.png");
-        public static Sprite LaserEyesPowerIcon = ModAPI.LoadSprite("Art/Icons/Laser.png");
-        public static Sprite FlyingFistIcon = ModAPI.LoadSprite("Art/Icons/Flying Fist.png");
-        public static Sprite GrenadierIcon = ModAPI.LoadSprite("Art/Icons/Grenadier.png");
-        public static Sprite ThickSkinIcon = ModAPI.LoadSprite("Art/Icons/Thick Skin.png");
-        public static Sprite BigFist = ModAPI.LoadSprite("Art/Particles/Fist - Copy.png");
-        public static Sprite CapeBase = ModAPI.LoadSprite("Art/Cape/cape01.png");
-        public static Sprite CapeTexture = ModAPI.LoadSprite("Art/Cape/cape02.png");
+        public static Sprite HealerPowerIcon;
+        public static Sprite HeadExploderPowerIcon;
+        public static Sprite LaserEyesPowerIcon;
+        public static Sprite FlyingFistIcon;
+        public static Sprite GrenadierIcon;
+        public static Sprite ThickSkinIcon;
+        public static Sprite BigFist;
+        public static Sprite CapeBase;
+        public static Sprite CapeTexture;
 
-        public static Texture2D HealerParticles = ModAPI.LoadTexture("Art/Particles/Health.png");
-        public static Texture2D FistParticles = ModAPI.LoadTexture("Art/Particles/Fist.png");
+        public static Texture2D HealerParticles;
+        public static Texture2D FistParticles;
 
-        public static AudioClip LaserShoot = ModAPI.LoadSound("Sounds/LazerBlast.wav");
-        public static AudioClip FistShoot = ModAPI.LoadSound("Sounds/Fist Shot.wav");
-        public static AudioClip FistAmb = ModAPI.LoadSound("Sounds/Fist_Amb.wav");
-
-
-
+        public static AudioClip LaserShoot;
+        public static AudioClip FistShoot;
+        public static AudioClip FistAmb;
     }
+
     public class PPF
     {
-        public static void Main() 
+        public static void Main()
         {
-            
-            
-            
-            
+            ResourceStorage.HealerPowerIcon = ModAPI.LoadSprite("Art/Icons/Healer.png");
+            ResourceStorage.HeadExploderPowerIcon = ModAPI.LoadSprite("Art/Icons/Head Exploder.png");
+            ResourceStorage.LaserEyesPowerIcon = ModAPI.LoadSprite("Art/Icons/Laser.png");
+            ResourceStorage.FlyingFistIcon = ModAPI.LoadSprite("Art/Icons/Flying Fist.png");
+            ResourceStorage.GrenadierIcon = ModAPI.LoadSprite("Art/Icons/Grenadier.png");
+            ResourceStorage.ThickSkinIcon = ModAPI.LoadSprite("Art/Icons/Thick Skin.png");
+            ResourceStorage.BigFist = ModAPI.LoadSprite("Art/Particles/Fist - Copy.png");
+            ResourceStorage.CapeBase = ModAPI.LoadSprite("Art/Cape/cape01.png");
+            ResourceStorage.CapeTexture = ModAPI.LoadSprite("Art/Cape/cape02.png");
+            ResourceStorage.HealerParticles = ModAPI.LoadTexture("Art/Particles/Health.png");
+            ResourceStorage.FistParticles = ModAPI.LoadTexture("Art/Particles/Fist.png");
+            ResourceStorage.LaserShoot = ModAPI.LoadSound("Sounds/LazerBlast.wav");
+            ResourceStorage.FistShoot = ModAPI.LoadSound("Sounds/Fist Shot.wav");
+            ResourceStorage.FistAmb = ModAPI.LoadSound("Sounds/Fist_Amb.wav");
+
+
+
             //Make sure to add new ones when you need to use them instead of using ModAPI.Load in AfterSpawn.
             GameObject ResourceManager = new GameObject();
             ResourceManager.AddComponent<ResourceStorage>();
@@ -75,7 +86,7 @@ namespace PPF
                     NameOverride = "Example Powered Person", //new item name with a suffix to assure it is globally unique
                     DescriptionOverride = "An example character that shoots lasers from the Power Pack Framework(PPF)", //new item description
                     CategoryOverride = ModAPI.FindCategory("Entities"), //new item category
-                                                                        //   ThumbnailOverride = ModAPI.LoadSprite("blueMan.png"), //new item thumbnail (relative path)
+                //   ThumbnailOverride = ModAPI.LoadSprite("blueMan.png"), //new item thumbnail (relative path)
                     AfterSpawn = (Instance) => //all code in the AfterSpawn delegate will be executed when the item is spawned
                     {
 
@@ -91,18 +102,21 @@ namespace PPF
                         var Cape = PowerPackFrameworkFunctions.CreateCape(person, ResourceStorage.CapeTexture, 0.15f, ResourceStorage.CapeBase);
 
                         //The three lines below are examples of how to add custom skins to the character.
-                        PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Art/Skins/Wilson/Skin Layer.png"),"TestSkin", "This is Wilson. He's a test skin in this case, but most importantly <color=red>Team Wilson's<color=white> mascot!");
+                        PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Art/Skins/Wilson/Skin Layer.png"), "TestSkin", "This is Wilson. He's a test skin in this case, but most importantly <color=red>Team Wilson's<color=white> mascot!");
                         PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Art/Skins/Wilson/skin_layer_1.png"), "BatmanSkin", "This is Wilson, except his parents are dead.");
                         PowerPackFrameworkFunctions.AddSkin(person, ModAPI.LoadTexture("Art/Skins/Wilson/Wilson.png"), "JediSkin", "This is Wilson, except he's green now.");
                         //These two lines of code are how you add a custom limb to the character, in this case, it's custom heads. (Added in v2)
-                        PowerPackFrameworkFunctions.AddCustomizedLimbToSkin(person, 0 , "BatmanSkin", ModAPI.LoadSprite("Art/Skins/Wilson/Head.png", 10), ModAPI.LoadTexture("Art/Skins/Wilson/Head Flesh.png"), ModAPI.LoadTexture("Art/Skins/Wilson/Head Bone.png"));
-                        PowerPackFrameworkFunctions.AddCustomizedLimbToSkin(person, 0, "JediSkin", ModAPI.LoadSprite("Art/Skins/Wilson/Head 2.png", 10), ModAPI.LoadTexture("Art/Skins/Wilson/Head Flesh.png"), ModAPI.LoadTexture("Art/Skins/Wilson/Head Bone.png"));
+                        PowerPackFrameworkFunctions.AddCustomizedLimbToSkin(person, 0, "BatmanSkin", ModAPI.LoadSprite("Art/Skins/Wilson/Head.png"));
+                        PowerPackFrameworkFunctions.AddCustomizedLimbToSkin(person, 0, "JediSkin", ModAPI.LoadSprite("Art/Skins/Wilson/Head 2.png"));
+
+                        //this is how you set a custom thumbnail for a skin (Added in v3)
+                        PowerPackFrameworkFunctions.SetSkinCustomThumbnail(person, "BatmanSkin", ModAPI.LoadSprite("Art/Skins/Wilson/Custom Thumb2.png"));
 
                         //The following lines of code are examples of how to add a skin events to your skin which executes a UnityAction. (Added in v2)
                         //and runs code on selection and deselection.
-                        
+
                         //Here we set up the skin selection action.
-                        UnityAction SkinSelectAction = () => 
+                        UnityAction SkinSelectAction = () =>
                         {
                             foreach (var item in person.Limbs)
                             {
@@ -133,7 +147,7 @@ namespace PPF
                 }
             );
             #endregion
-           
+
             #region Syringes
             //Laser eye syringe
             ModAPI.Register(
@@ -233,6 +247,40 @@ namespace PPF
                     {
                         Component.Destroy(Instance.GetComponent<LifeSyringe>());
                         Instance.AddComponent<GrenadierExampleSyringe>();
+                    }
+                }
+            );
+
+            //Power Disabler Syringe
+            ModAPI.Register(
+                new Modification()
+                {
+                    OriginalItem = ModAPI.FindSpawnable("Life Syringe"), //item to derive from
+                    NameOverride = "Power Disabler Syringe", //new item name with a suffix to assure it is globally unique
+                    DescriptionOverride = "An example power syringe that disables powers. from the Power Pack Framework(PPF)", //new item description
+                    CategoryOverride = ModAPI.FindCategory("Biohazard"), //new item category
+                                                                         //   ThumbnailOverride = ModAPI.LoadSprite("blueMan.png"), //new item thumbnail (relative path)
+                    AfterSpawn = (Instance) => //all code in the AfterSpawn delegate will be executed when the item is spawned
+                    {
+                        Component.Destroy(Instance.GetComponent<LifeSyringe>());
+                        Instance.AddComponent<PowerDisablerSyringe>();
+                    }
+                }
+            );
+
+            //Power Remover Syringe
+            ModAPI.Register(
+                new Modification()
+                {
+                    OriginalItem = ModAPI.FindSpawnable("Life Syringe"), //item to derive from
+                    NameOverride = "Power Remover Syringe", //new item name with a suffix to assure it is globally unique
+                    DescriptionOverride = "An example power syringe that removes powers. from the Power Pack Framework(PPF)", //new item description
+                    CategoryOverride = ModAPI.FindCategory("Biohazard"), //new item category
+                                                                         //   ThumbnailOverride = ModAPI.LoadSprite("blueMan.png"), //new item thumbnail (relative path)
+                    AfterSpawn = (Instance) => //all code in the AfterSpawn delegate will be executed when the item is spawned
+                    {
+                        Component.Destroy(Instance.GetComponent<LifeSyringe>());
+                        Instance.AddComponent<PowerRemoverSyringe>();
                     }
                 }
             );

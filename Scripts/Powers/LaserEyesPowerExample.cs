@@ -15,14 +15,18 @@ namespace PPF
         /// This is an example script that allows characters to shoot laser's from their heads
         public AudioClip LaserSound;
         public AudioSource audio;
-        public Color LaserColor;
+        public Color LaserColor = Color.green;
 
         public void Awake()
         {
             //We set our base info and values here
             PowerName = "Laser Eyes";
+            PowerDescription = "Shoots a laser from user's head";
             Activation = "Head";
             audio = gameObject.AddComponent<AudioSource>();
+
+            //we add the LaserColor variable to the power settings so we can change it in the power menu
+            AddColorPowerSetting("Laser Color","Changes the color of the fist",Color.green,"SetLaserColor");
         }
 
 
@@ -84,6 +88,11 @@ namespace PPF
 
                 body.GetComponent<LaserEyesPowerExample>().PowerIcon = ResourceStorage.LaserEyesPowerIcon; ;
             }
+        }
+
+        void SetLaserColor(Color color)
+        {
+            LaserColor = color;
         }
     }
 }

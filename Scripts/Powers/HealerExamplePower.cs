@@ -17,6 +17,7 @@ namespace PPF
         {
             //We set our base info and values here
             PowerName = "Heal Pulse";
+            PowerDescription = "Heals all nearby limbs";
             Activation = "Chest";
         }
         public override void UsePower()
